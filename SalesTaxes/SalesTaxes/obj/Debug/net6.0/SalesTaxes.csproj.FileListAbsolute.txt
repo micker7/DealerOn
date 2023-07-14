@@ -1,0 +1,15 @@
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\bin\Debug\net6.0\SalesTaxes.exe
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\bin\Debug\net6.0\SalesTaxes.deps.json
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\bin\Debug\net6.0\SalesTaxes.runtimeconfig.json
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\bin\Debug\net6.0\SalesTaxes.dll
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\bin\Debug\net6.0\SalesTaxes.pdb
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\obj\Debug\net6.0\SalesTaxes.csproj.AssemblyReference.cache
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\obj\Debug\net6.0\SalesTaxes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\obj\Debug\net6.0\SalesTaxes.AssemblyInfoInputs.cache
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\obj\Debug\net6.0\SalesTaxes.AssemblyInfo.cs
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\obj\Debug\net6.0\SalesTaxes.csproj.CoreCompileInputs.cache
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\obj\Debug\net6.0\SalesTaxes.dll
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\obj\Debug\net6.0\refint\SalesTaxes.dll
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\obj\Debug\net6.0\SalesTaxes.pdb
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\obj\Debug\net6.0\SalesTaxes.genruntimeconfig.cache
+C:\Users\13307\Documents\Repos\DealerOn\SalesTaxes\SalesTaxes\obj\Debug\net6.0\ref\SalesTaxes.dll
