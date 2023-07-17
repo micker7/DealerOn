@@ -10,13 +10,11 @@ public class ProductLine
         Quantity = quantity;
         Name = name;
         Price = price;
-        TaxRate = Helper.TaxRate(Name);
     }
 
     public string Name { get; set; }
     public double Price { get; set; }
     public int Quantity { get; set; }
-    public double TaxRate { get; set;}
-    public double SalesTax { get { return Price * TaxRate; } }
+    public double TaxRate { get; set; }
 
 }

@@ -9,21 +9,30 @@ public class Cart
 {
     public static void PrintReceipt(List<ProductLine> items)
     {
-        Console.WriteLine("Items:\t\t\tPrices:");
-        Console.WriteLine("----------------------------------------------");
+        Console.WriteLine("Items:\t\tPrices:");
+        Console.WriteLine("-------------------------------------------");
 
         foreach (var item in items)
         {
             double totalPrice = item.Price * item.Quantity;
+            if (item.Quantity > 1)
+            {
 
-            Console.WriteLine($"{item.Quantity} {item.Name}:\t{totalPrice:C}");
+                Console.WriteLine(item.Name + ": " + totalPrice + " (" + item.Quantity + " @ " + item.Price + ")");
+            }
+            else
+            {
+                Console.WriteLine(item.Name + ": " + totalPrice);
+            }
         }
     }
 
     public static double TotalCosts(List<ProductLine> items)
     {
-        double totalCost = items.Sum(item => item.Price);
-        return totalCost;
+        double totalPrices = items.Sum(item => item.Price * item.Quantity);
+        double roundedCostAmount = Math.Round(totalPrices, 2);
+        double total = roundedCostAmount;
+        return total;
     }
 
     public static void AddItemToCart(List<ProductLine> items, double itemPrice, string itemName)
@@ -40,7 +49,7 @@ public class Cart
         
         Console.Clear();
         Console.WriteLine($"You Added a {itemName} to Your Shopping Cart");
-        Console.WriteLine("Press Enter to Go Back to the Menu.");
+        Console.WriteLine("Press Any Key to Go Back to the Menu.");
         Console.ReadKey();
 
     }

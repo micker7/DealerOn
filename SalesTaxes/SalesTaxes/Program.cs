@@ -24,8 +24,8 @@ public class Program
         while (isRunning)
         {
             Console.Clear();
-            Console.WriteLine("\n");
             Console.WriteLine("Welcome to the DealerOn Shop!\nPlease Select by the # to Add to Your Cart");
+            Console.WriteLine("\n");
             Console.WriteLine("1. Book");
             Console.WriteLine("2. Music CD");
             Console.WriteLine("3. Chocolate Bar");
@@ -70,19 +70,20 @@ public class Program
                     break;
                 case "8":
                     Console.Clear();
-                    Console.WriteLine("Receipt");
+                    Console.WriteLine("\tReceipt");
+                    Console.WriteLine("\n");
                     Cart.PrintReceipt(items);
-                    double totalTax = Helper.TotalTax(items);
-                    double totalCost = Cart.TotalCosts(items);
-                    Console.WriteLine($"Sales Taxes: ${Helper.TotalTax(items)}");
-                    Console.WriteLine($"Total: ${totalCost}");
+                    double totalTax = TaxHelper.TaxRate(items);
+                    double total = Cart.TotalCosts(items);
+                    Console.WriteLine("Sales Taxes: " + totalTax);
+                    Console.WriteLine("Total: " + total);
                     Console.ReadKey();
                     isRunning = false;
                     break;
                 default:
                     Console.Clear();
                     Console.WriteLine("Please Type in a Number From the Provided Menu.");
-                    Console.WriteLine("Press Enter to Go Back to the Menu.");
+                    Console.WriteLine("Press Any Key to Go Back to the Menu.");
                     Console.ReadKey();
                     break;
 
