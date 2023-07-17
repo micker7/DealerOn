@@ -71,10 +71,10 @@ public class Program
                 case "8":
                     Console.Clear();
                     Console.WriteLine("Receipt");
-                    Cart.PrintReceipt(items, double itemPrice, string itemName);
-                    double totalTax = Helper.TaxRate(string itemName);
+                    Cart.PrintReceipt(items);
+                    double totalTax = Helper.TotalTax(items);
                     double totalCost = Cart.TotalCosts(items);
-                    Console.WriteLine($"Sales Taxes: ${Helper.TotalTax()}");
+                    Console.WriteLine($"Sales Taxes: ${Helper.TotalTax(items)}");
                     Console.WriteLine($"Total: ${totalCost}");
                     Console.ReadKey();
                     isRunning = false;

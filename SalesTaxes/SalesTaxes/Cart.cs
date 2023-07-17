@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 public class Cart
 {
-    public static void PrintReceipt(List<ProductLine> items, double itemPrice, string itemName)
+    public static void PrintReceipt(List<ProductLine> items)
     {
         Console.WriteLine("Items:\t\t\tPrices:");
         Console.WriteLine("----------------------------------------------");
 
         foreach (var item in items)
         {
-            double totalPrice = ProductLine.price.Sum(x => x * quantity);
+            double totalPrice = item.Price * item.Quantity;
 
-            Console.WriteLine($"{ProductLine.quantity} {itemName}:\t{totalPrice:C}");
+            Console.WriteLine($"{item.Quantity} {item.Name}:\t{totalPrice:C}");
         }
     }
 
     public static double TotalCosts(List<ProductLine> items)
     {
-        double totalCost = items.Price.Sum();
+        double totalCost = items.Sum(item => item.Price);
         return totalCost;
     }
 

@@ -28,10 +28,10 @@ public class Helper
 
     }
 
-    public static double TotalTax()
+    public static double TotalTax(List<ProductLine> items)
     {
-        double totalTax;
-        return totalTax.Sum();
+        double totalTax = items.Sum(item => item.SalesTax);
+        return totalTax;
 
     }
        
