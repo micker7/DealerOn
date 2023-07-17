@@ -7,27 +7,41 @@ using System.Threading.Tasks;
 
 public class Cart
 {
-    public static void PrintReceipt(List<string> items, List<double> costs, List<int> quantity)
+    public static void PrintReceipt(List<ProductLine> items, double itemPrice, string itemName)
     {
-
-      
         Console.WriteLine("Items:\t\t\tPrices:");
         Console.WriteLine("----------------------------------------------");
 
-        for (int i = 0; i < items.Count; i++)
+        foreach (var item in items)
         {
-            Console.WriteLine($"{items[i]}:\t{costs[i]:C}");
+            double totalPrice = ProductLine.price.Sum(x => x * quantity);
+
+            Console.WriteLine($"{ProductLine.quantity} {itemName}:\t{totalPrice:C}");
         }
-
-        if()
-
     }
 
-    public static double TotalCosts(List<double> costs)
+    public static double TotalCosts(List<ProductLine> items)
     {
-        double totalCost = costs.Sum();
+        double totalCost = items.Price.Sum();
         return totalCost;
+    }
 
+    public static void AddItemToCart(List<ProductLine> items, double itemPrice, string itemName)
+    {
+        int index = items.FindIndex(item => item.Name == itemName);
+        if (index != -1)
+        {
+            items[index].Quantity++;
+        }
+        else
+        {            
+            items.Add(new ProductLine(1, itemName, itemPrice));
+        } 
+        
+        Console.Clear();
+        Console.WriteLine($"You Added a {itemName} to Your Shopping Cart");
+        Console.WriteLine("Press Enter to Go Back to the Menu.");
+        Console.ReadKey();
 
     }
 }

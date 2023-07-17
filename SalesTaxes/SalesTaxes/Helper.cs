@@ -7,27 +7,34 @@ using System.Threading.Tasks;
 public class Helper
 {
    
-    public static double TaxRate(List<string> items, List<double> costs)
+    public static double TaxRate(string itemName)
     {
         double taxRate;
+            
+            if (itemName.Contains("book") || itemName.Contains("chocolate") || itemName.Contains("pills"))
+            {
+                taxRate = 0.00;
+            }
+            else
+            {
+                taxRate = 0.1;
+            }
 
-        if (items.Contains("book") || items.Contains("chocolate") || items.Contains("pills"))
-        {
-            taxRate = 0.00;
-        }
-        else
-        {
-            taxRate = 0.1;
-        }
-
-        if (items.Contains("imported"))
-        {
-            taxRate += 0.05;
-        }
-
+            if (itemName.Contains("imported"))
+            {
+                taxRate = 0.05;
+            }
         return taxRate;
 
     }
+
+    public static double TotalTax()
+    {
+        double totalTax;
+        return totalTax.Sum();
+
+    }
+       
 }
 
 

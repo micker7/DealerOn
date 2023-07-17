@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-public class Product
+public class ProductLine
 {
-    public Product(int numberOfProduct, string name, double price)
+    public ProductLine(int quantity, string name, double price)
     {
-        NumberOfProduct = numberOfProduct;
-        Name = name; 
+        Quantity = quantity;
+        Name = name;
         Price = price;
+        TaxRate = Helper.TaxRate(Name);
     }
 
     public string Name { get; set; }
-	public double Price { get; set; }
-	public int NumberOfProduct { get; set; }
-
+    public double Price { get; set; }
+    public int Quantity { get; set; }
+    public double TaxRate { get; set;}
+    public double SalesTax { get { return Price * TaxRate; } }
 
 }
