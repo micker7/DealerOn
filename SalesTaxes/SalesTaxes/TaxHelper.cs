@@ -9,11 +9,7 @@ public class TaxHelper
     public static double TaxRate(ProductLine item)
     {
         double taxRate =0.0;
-        if (item.Name.Contains("Imported"))
-        {
-            taxRate += 0.05;
-        }
-        else if (item.Name.Contains("Book") || item.Name.Contains("Bar") || item.Name.Contains("Pills"))
+        if (item.Name.Contains("Book") || item.Name.Contains("Chocolate") || item.Name.Contains("Pills"))
         {
             taxRate = 0;
         }
@@ -21,16 +17,27 @@ public class TaxHelper
         {
             taxRate += 0.1;
         }
-        double roundedtaxRate = Math.Ceiling(taxRate / 0.05) * 0.05;
-        return roundedtaxRate;
+        if (item.Name.Contains("Imported"))
+        {
+            taxRate += 0.05;
+        }
+        
+        return taxRate;
     }
 
     public static double TotalTax(List<ProductLine> items)
     {
-        double totalTax = items.Sum(item => item.Price * item.Quantity * TaxRate(item));
-        double roundedTaxes = Math.Round(totalTax, 2);
-        return roundedTaxes;
+        double totalTax = items.Sum(item => Math.Ceiling(item.Price * item.Quantity * TaxRate(item) / 0.05) * 0.05);
+        //double totalRoundedTax = Math.Ceiling(totalTax / 0.05) * 0.05;
+        //return Math.Round(totalRoundedTax,2); 
+        return totalTax;
+    }
 
+    public static double ItemTax(ProductLine item)
+    {
+        double tax = item.Price * TaxRate(item);
+        double roundedTax = Math.Ceiling(tax / 0.05) * 0.05;
+        return Math.Round(roundedTax, 2);
     }
 }
 

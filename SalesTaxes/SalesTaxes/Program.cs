@@ -9,7 +9,7 @@ public class Program
     {
        List<ProductLine> items = new List<ProductLine>();
        
-        Cart cart = new Cart();
+        Cart shoppingCart = new Cart();
        
         const double BOOK_PRICE = 12.49;
         const double MUSIC_CD_PRICE = 14.99;

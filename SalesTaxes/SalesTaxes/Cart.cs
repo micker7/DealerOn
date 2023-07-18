@@ -17,21 +17,19 @@ public class Cart
             double totalPrice = item.Price * item.Quantity;
             if (item.Quantity > 1)
             {
-
-                Console.WriteLine(item.Name + ": " + totalPrice + " (" + item.Quantity + " @ " + item.Price + ")");
+                Console.WriteLine($"{item.Name}: {Math.Round(totalPrice + (TaxHelper.ItemTax(item) * item.Quantity), 2).ToString("0.00")} ({item.Quantity} @ {Math.Round(item.Price + TaxHelper.ItemTax(item), 2).ToString("0.00")})");
             }
             else
             {
-                Console.WriteLine(item.Name + ": " + totalPrice);
+                Console.WriteLine($"{item.Name}: {Math.Round(totalPrice + TaxHelper.ItemTax(item), 2).ToString("0.00")}");
             }
         }
     }
 
     public static double TotalCosts(List<ProductLine> items)
     {
-        double totalPrices = items.Sum(item => item.Quantity * item.Price + TaxHelper.TotalTax(items));
-        double roundedCostAmount = Math.Round(totalPrices, 2);
-        return roundedCostAmount;
+        double totalCosts = items.Sum(item => item.Quantity * item.Price) + TaxHelper.TotalTax(items);
+        return totalCosts;
     }
 
     public static void AddItemToCart(List<ProductLine> items, double itemPrice, string itemName)
