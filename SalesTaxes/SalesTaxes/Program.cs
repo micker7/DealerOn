@@ -9,8 +9,6 @@ public class Program
     {
        List<ProductLine> items = new List<ProductLine>();
        
-        Cart shoppingCart = new Cart();
-       
         const double BOOK_PRICE = 12.49;
         const double MUSIC_CD_PRICE = 14.99;
         const double CHOCOLATE_BAR_PRICE = 0.85;
@@ -42,7 +40,6 @@ public class Program
                 case "1":
                     Console.Clear();
                     Cart.AddItemToCart(items, BOOK_PRICE, "Book");
-                    
                     break;
                 case "2":
                     Console.Clear();
