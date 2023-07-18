@@ -29,10 +29,9 @@ public class Cart
 
     public static double TotalCosts(List<ProductLine> items)
     {
-        double totalPrices = items.Sum(item => item.Price * item.Quantity);
+        double totalPrices = items.Sum(item => item.Quantity * item.Price + TaxHelper.TotalTax(items));
         double roundedCostAmount = Math.Round(totalPrices, 2);
-        double total = roundedCostAmount;
-        return total;
+        return roundedCostAmount;
     }
 
     public static void AddItemToCart(List<ProductLine> items, double itemPrice, string itemName)

@@ -73,10 +73,10 @@ public class Program
                     Console.WriteLine("\tReceipt");
                     Console.WriteLine("\n");
                     Cart.PrintReceipt(items);
-                    double totalTax = TaxHelper.TaxRate(items);
+                    double totalTax = TaxHelper.TotalTax(items);
                     double total = Cart.TotalCosts(items);
-                    Console.WriteLine("Sales Taxes: " + totalTax);
-                    Console.WriteLine("Total: " + total);
+                    Console.WriteLine("Sales Taxes: " + totalTax.ToString("0.00"));
+                    Console.WriteLine("Total: " + total.ToString("0.00"));
                     Console.ReadKey();
                     isRunning = false;
                     break;
