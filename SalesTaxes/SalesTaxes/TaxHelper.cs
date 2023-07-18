@@ -27,10 +27,9 @@ public class TaxHelper
 
     public static double TotalTax(List<ProductLine> items)
     {
-        double totalTax = items.Sum(item => Math.Ceiling(item.Price * item.Quantity * TaxRate(item) / 0.05) * 0.05);
-        //double totalRoundedTax = Math.Ceiling(totalTax / 0.05) * 0.05;
-        //return Math.Round(totalRoundedTax,2); 
-        return totalTax;
+        double totalTax = items.Sum(item => item.Price * item.Quantity * TaxRate(item));
+        double totalRoundedTax = Math.Ceiling(totalTax / 0.05) * 0.05;
+        return Math.Round(totalRoundedTax,2); 
     }
 
     public static double ItemTax(ProductLine item)
